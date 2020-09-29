@@ -65,11 +65,22 @@ describe Card do
 
     it "Can retrieve the value of the card using a `.value`." do
       # ensure that `.value works as expected`
+      [:hearts, :spades, :clubs, :diamonds].each do |suit|
+        (1..13).each do |value|
+          card = Card.new(value, suit)
+          expect(card.value).must_equal value
+        end
+      end
     end
 
     it "Can retrieve the value of the card using a `.suit`." do
       # ensure that `.suit works as expected returning the symbol of the suit`
-
+      [:hearts, :spades, :clubs, :diamonds].each do |suit|
+        (1..13).each do |value|
+          card = Card.new(value, suit)
+          expect(card.suit).must_equal suit
+        end
+      end
     end
   end
 
